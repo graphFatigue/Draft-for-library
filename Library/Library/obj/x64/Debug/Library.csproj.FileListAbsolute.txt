@@ -10,3 +10,8 @@ C:\Users\Mary\source\repos\Library\Library\obj\x64\Debug\Library.csproj.Generate
 C:\Users\Mary\source\repos\Library\Library\obj\x64\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\Mary\source\repos\Library\Library\obj\x64\Debug\Library.exe
 C:\Users\Mary\source\repos\Library\Library\obj\x64\Debug\Library.pdb
+C:\Users\Mary\source\repos\Library\Library\obj\x64\Debug\Library.Edit_Books.resources
+C:\Users\Mary\source\repos\Library\Library\obj\x64\Debug\Library.Edit_Authors.resources
+C:\Users\Mary\source\repos\Library\Library\obj\x64\Debug\Library.Edit_Publishers.resources
+C:\Users\Mary\source\repos\Library\Library\obj\x64\Debug\Library.Edit_Book_Author.resources
+C:\Users\Mary\source\repos\Library\Library\obj\x64\Debug\Library.Edit_Book_Publisher.resources
