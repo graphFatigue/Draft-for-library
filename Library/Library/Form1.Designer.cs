@@ -33,8 +33,6 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDataSet = new Library.LibraryDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.authorsTableAdapter = new Library.LibraryDataSetTableAdapters.AuthorsTableAdapter();
             this.authoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,21 +41,35 @@
             this.dateOfDeathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nationalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.authorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.authorsTableAdapter = new Library.LibraryDataSetTableAdapters.AuthorsTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.authorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publishersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookAuthorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookPublisherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editAuthorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editPublishersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editBookAuthorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editBookPublisherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter = new Library.LibraryDataSetTableAdapters.BooksTableAdapter();
             this.publishersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -67,12 +79,6 @@
             this.bookPublisherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.book_PublisherTableAdapter = new Library.LibraryDataSetTableAdapters.Book_PublisherTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
-            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.authorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.publishersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookAuthorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookPublisherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -114,17 +120,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1154, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(1341, 285);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // authorsBindingSource
-            // 
-            this.authorsBindingSource.DataMember = "Authors";
-            this.authorsBindingSource.DataSource = this.bindingSource1;
-            // 
-            // authorsTableAdapter
-            // 
-            this.authorsTableAdapter.ClearBeforeFill = true;
             // 
             // authoridDataGridViewTextBoxColumn
             // 
@@ -190,15 +187,25 @@
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
             this.genderDataGridViewTextBoxColumn.Width = 125;
             // 
+            // authorsBindingSource
+            // 
+            this.authorsBindingSource.DataMember = "Authors";
+            this.authorsBindingSource.DataSource = this.bindingSource1;
+            // 
+            // authorsTableAdapter
+            // 
+            this.authorsTableAdapter.ClearBeforeFill = true;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.databaseToolStripMenuItem});
+            this.databaseToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1311, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1385, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -213,9 +220,103 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.authorsToolStripMenuItem,
+            this.booksToolStripMenuItem,
+            this.publishersToolStripMenuItem,
+            this.bookAuthorToolStripMenuItem,
+            this.bookPublisherToolStripMenuItem});
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.databaseToolStripMenuItem.Text = "Database";
+            // 
+            // authorsToolStripMenuItem
+            // 
+            this.authorsToolStripMenuItem.Name = "authorsToolStripMenuItem";
+            this.authorsToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.authorsToolStripMenuItem.Text = "Authors";
+            this.authorsToolStripMenuItem.Click += new System.EventHandler(this.authorsToolStripMenuItem_Click);
+            // 
+            // booksToolStripMenuItem
+            // 
+            this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.booksToolStripMenuItem.Text = "Books";
+            this.booksToolStripMenuItem.Click += new System.EventHandler(this.booksToolStripMenuItem_Click);
+            // 
+            // publishersToolStripMenuItem
+            // 
+            this.publishersToolStripMenuItem.Name = "publishersToolStripMenuItem";
+            this.publishersToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.publishersToolStripMenuItem.Text = "Publishers";
+            this.publishersToolStripMenuItem.Click += new System.EventHandler(this.publishersToolStripMenuItem_Click);
+            // 
+            // bookAuthorToolStripMenuItem
+            // 
+            this.bookAuthorToolStripMenuItem.Name = "bookAuthorToolStripMenuItem";
+            this.bookAuthorToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.bookAuthorToolStripMenuItem.Text = "Book-Author";
+            this.bookAuthorToolStripMenuItem.Click += new System.EventHandler(this.bookAuthorToolStripMenuItem_Click);
+            // 
+            // bookPublisherToolStripMenuItem
+            // 
+            this.bookPublisherToolStripMenuItem.Name = "bookPublisherToolStripMenuItem";
+            this.bookPublisherToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.bookPublisherToolStripMenuItem.Text = "Book-Publisher";
+            this.bookPublisherToolStripMenuItem.Click += new System.EventHandler(this.bookPublisherToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editAuthorsToolStripMenuItem,
+            this.editBooksToolStripMenuItem,
+            this.editPublishersToolStripMenuItem,
+            this.editBookAuthorToolStripMenuItem,
+            this.editBookPublisherToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // editAuthorsToolStripMenuItem
+            // 
+            this.editAuthorsToolStripMenuItem.Name = "editAuthorsToolStripMenuItem";
+            this.editAuthorsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editAuthorsToolStripMenuItem.Text = "Edit Authors";
+            this.editAuthorsToolStripMenuItem.Click += new System.EventHandler(this.editAuthorsToolStripMenuItem_Click);
+            // 
+            // editBooksToolStripMenuItem
+            // 
+            this.editBooksToolStripMenuItem.Name = "editBooksToolStripMenuItem";
+            this.editBooksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editBooksToolStripMenuItem.Text = "Edit Books";
+            this.editBooksToolStripMenuItem.Click += new System.EventHandler(this.editBooksToolStripMenuItem_Click);
+            // 
+            // editPublishersToolStripMenuItem
+            // 
+            this.editPublishersToolStripMenuItem.Name = "editPublishersToolStripMenuItem";
+            this.editPublishersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editPublishersToolStripMenuItem.Text = "Edit Publishers";
+            this.editPublishersToolStripMenuItem.Click += new System.EventHandler(this.editPublishersToolStripMenuItem_Click);
+            // 
+            // editBookAuthorToolStripMenuItem
+            // 
+            this.editBookAuthorToolStripMenuItem.Name = "editBookAuthorToolStripMenuItem";
+            this.editBookAuthorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editBookAuthorToolStripMenuItem.Text = "Edit Book-Author";
+            this.editBookAuthorToolStripMenuItem.Click += new System.EventHandler(this.editBookAuthorToolStripMenuItem_Click);
+            // 
+            // editBookPublisherToolStripMenuItem
+            // 
+            this.editBookPublisherToolStripMenuItem.Name = "editBookPublisherToolStripMenuItem";
+            this.editBookPublisherToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editBookPublisherToolStripMenuItem.Text = "Edit Book-Publisher";
+            this.editBookPublisherToolStripMenuItem.Click += new System.EventHandler(this.editBookPublisherToolStripMenuItem_Click);
             // 
             // bindingNavigator1
             // 
@@ -237,7 +338,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(12, 218);
+            this.bindingNavigator1.Location = new System.Drawing.Point(12, 353);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -247,6 +348,31 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(302, 27);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -281,16 +407,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -313,26 +432,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // booksBindingSource
             // 
@@ -380,58 +481,11 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Authors";
             // 
-            // databaseToolStripMenuItem
-            // 
-            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.authorsToolStripMenuItem,
-            this.booksToolStripMenuItem,
-            this.publishersToolStripMenuItem,
-            this.bookAuthorToolStripMenuItem,
-            this.bookPublisherToolStripMenuItem});
-            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
-            this.databaseToolStripMenuItem.Text = "Database";
-            // 
-            // authorsToolStripMenuItem
-            // 
-            this.authorsToolStripMenuItem.Name = "authorsToolStripMenuItem";
-            this.authorsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.authorsToolStripMenuItem.Text = "Authors";
-            this.authorsToolStripMenuItem.Click += new System.EventHandler(this.authorsToolStripMenuItem_Click);
-            // 
-            // booksToolStripMenuItem
-            // 
-            this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.booksToolStripMenuItem.Text = "Books";
-            this.booksToolStripMenuItem.Click += new System.EventHandler(this.booksToolStripMenuItem_Click);
-            // 
-            // publishersToolStripMenuItem
-            // 
-            this.publishersToolStripMenuItem.Name = "publishersToolStripMenuItem";
-            this.publishersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.publishersToolStripMenuItem.Text = "Publishers";
-            this.publishersToolStripMenuItem.Click += new System.EventHandler(this.publishersToolStripMenuItem_Click);
-            // 
-            // bookAuthorToolStripMenuItem
-            // 
-            this.bookAuthorToolStripMenuItem.Name = "bookAuthorToolStripMenuItem";
-            this.bookAuthorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.bookAuthorToolStripMenuItem.Text = "Book-Author";
-            this.bookAuthorToolStripMenuItem.Click += new System.EventHandler(this.bookAuthorToolStripMenuItem_Click);
-            // 
-            // bookPublisherToolStripMenuItem
-            // 
-            this.bookPublisherToolStripMenuItem.Name = "bookPublisherToolStripMenuItem";
-            this.bookPublisherToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.bookPublisherToolStripMenuItem.Text = "Book-Publisher";
-            this.bookPublisherToolStripMenuItem.Click += new System.EventHandler(this.bookPublisherToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 603);
+            this.ClientSize = new System.Drawing.Size(1385, 603);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.menuStrip1);
@@ -504,6 +558,12 @@
         private System.Windows.Forms.ToolStripMenuItem publishersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookAuthorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookPublisherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editAuthorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editBooksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editPublishersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editBookAuthorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editBookPublisherToolStripMenuItem;
     }
 }
 

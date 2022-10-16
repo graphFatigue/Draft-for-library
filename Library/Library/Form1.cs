@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.LibraryDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,6 +83,61 @@ namespace Library
             bindingNavigator1.BindingSource = bookPublisherBindingSource;
             dataGridView1.DataSource = bookPublisherBindingSource;
             label1.Text = "Book-Publisher";
+        }
+
+        private void editBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var rs = new Edit_Books();
+            rs.ShowDialog();
+            booksTableAdapter.Fill(libraryDataSet.Books);
+            authorsTableAdapter.Fill(libraryDataSet.Authors);
+            publishersTableAdapter.Fill(libraryDataSet.Publishers);
+            book_AuthorTableAdapter.Fill(libraryDataSet.Book_Author);
+            book_PublisherTableAdapter.Fill(libraryDataSet.Book_Publisher);
+        }
+
+        private void editAuthorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var rs = new Edit_Authors();
+            rs.ShowDialog();
+            booksTableAdapter.Fill(libraryDataSet.Books);
+            authorsTableAdapter.Fill(libraryDataSet.Authors);
+            publishersTableAdapter.Fill(libraryDataSet.Publishers);
+            book_AuthorTableAdapter.Fill(libraryDataSet.Book_Author);
+            book_PublisherTableAdapter.Fill(libraryDataSet.Book_Publisher);
+        }
+
+        private void editPublishersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var rs = new Edit_Publishers();
+            rs.ShowDialog();
+            booksTableAdapter.Fill(libraryDataSet.Books);
+            authorsTableAdapter.Fill(libraryDataSet.Authors);
+            publishersTableAdapter.Fill(libraryDataSet.Publishers);
+            book_AuthorTableAdapter.Fill(libraryDataSet.Book_Author);
+            book_PublisherTableAdapter.Fill(libraryDataSet.Book_Publisher);
+        }
+
+        private void editBookAuthorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var rs = new Edit_Book_Author();
+            rs.ShowDialog();
+            booksTableAdapter.Fill(libraryDataSet.Books);
+            authorsTableAdapter.Fill(libraryDataSet.Authors);
+            publishersTableAdapter.Fill(libraryDataSet.Publishers);
+            book_AuthorTableAdapter.Fill(libraryDataSet.Book_Author);
+            book_PublisherTableAdapter.Fill(libraryDataSet.Book_Publisher);
+        }
+
+        private void editBookPublisherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var rs = new Edit_Book_Publisher();
+            rs.ShowDialog();
+            booksTableAdapter.Fill(libraryDataSet.Books);
+            authorsTableAdapter.Fill(libraryDataSet.Authors);
+            publishersTableAdapter.Fill(libraryDataSet.Publishers);
+            book_AuthorTableAdapter.Fill(libraryDataSet.Book_Author);
+            book_PublisherTableAdapter.Fill(libraryDataSet.Book_Publisher);
         }
     }
 }
